@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'MyKitchenHelper/base_main.html' %}
 
-	<title>My Kitchen Helper</title>
+{% block title %}Welcome!{% endblock %}
 
-	{% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"/>
+{% block content %}
+blah
+{% endblock %}
 
-</head>
-<body>
-	<h1>Hello</h1>
-</body>
-</html>
+{% block scriptlink %}
+<script>
+	activeNav("homeNav");
+</script>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Google Fonts for Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oregano' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Khula:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+
+	<!-- Font Awesome For Font Icons -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"/>
+
+	{% block csslink %}{% endblock %}
+
+	<title>My Kitchen Helper</title>
+</head>
+<body>
+	<header id="apptitle">My Kitchen Helper</header>
+	<nav id="mainnav">
+		<ul>
+			<li>
+				<a id="homeNav" href="{% url 'home' %}">
+					<i class="fa fa-home"></i>
+				</a>
+			</li>
+			<li>
+				<a id="inventoryNav" href="">
+					<i class="fa fa-inbox"></i>
+				</a>
+			</li>
+			<li>
+				<a id="recipesNav" href="">
+					<i class="fa fa-book"></i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fa fa-calendar"></i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fa fa-shopping-cart"></i>
+				</a>
+			</li>
+			<li>
+				<a href="/admin">
+					<i class="fa fa-database"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<section id="main">
+		{% block main %}{% endblock %}
+	</section>
+
+	<script src="{% static "scripts/main.js" %}"></script>
+	{% block scriptlink %}{% endblock %}
+
+</body>
+</html>
