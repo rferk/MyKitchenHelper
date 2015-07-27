@@ -1,0 +1,181 @@
+#adddiv {
+	display: none;
+	padding: 5px 20px 15px 20px;
+	margin: 0 5px;
+	border: 1px solid #96CC21;
+	border-top: none;
+	border-radius: 0 0 20px 20px;
+	-webkit-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
+	box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
+}
+
+#adddiv table {
+	border-spacing: 25px 0;
+	display: inline-block;
+}
+
+#id_stock, #id_threshold {
+	width: 60px;
+}
+
+#adddiv .fields {
+	/*margin: 0 0 20px 0;*/
+}
+
+#adddiv .labels {
+	font-family: 'Oswald', sans-serif;
+	/*font-variant: small-caps;*/
+	font-size: 14px;
+}
+
+/*#addsubmit {
+	position: absolute;
+	top: 15px;
+	right: 65px;
+	font-size: 30px;
+}
+
+#addsubmit:hover {
+	cursor: pointer;
+	color: yellow;
+}*/
+
+#adddiv ul {
+	list-style: none;
+	padding-right: 8px;
+	display: inline-block;
+	position: absolute;
+	top: 14px;
+	right: 12px;
+	font-size: 30px;
+}
+
+#adddiv li {
+	float: left;
+	padding-left: 20px;
+}
+
+
+#inventorylist {
+	padding: 20px;
+	overflow: auto;
+}
+
+.group {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 10px auto;
+	font-family: 'Khula', sans-serif;
+}
+
+.grouphead {
+	border-bottom: 1px solid #C6C6C6;
+	font-family: 'Oregano', cursive;
+}
+
+.grouphead i {
+	color: #000;
+	font-size: 14px;
+	padding-right: 10px;
+	padding-top: 3px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.grouphead i:hover {
+	cursor: pointer;
+}
+
+/* First Data Row */
+.grouphead + tr > td {
+	padding-top: 5px;
+}
+
+/* Header cells */
+.grouphead th {
+	font-weight: normal;
+}
+
+/* First Header Cell*/
+.grouphead th:first-child {
+	font-size: 18px;
+	color: #005C00;
+}
+
+/* First Column */
+.group tr > :first-child {
+	text-align: left;
+	/*padding-left: 5px;*/
+}
+
+/* First Data Row Column */
+.datarow > :first-child {
+	padding-left: 25px;
+}
+
+.datarow.rowshow {
+	display: table-row;
+}
+
+.datarow.rowhide {
+	display: none;
+}
+
+
+/* First Column */
+.group col:nth-child(1) {
+	/*width: 200px;*/
+}
+
+/* Second Column */
+.group col:nth-child(2) {
+	width: 50px;
+}
+
+/* Third Column */
+.group col:nth-child(3) {
+	width: 50px;
+}
+
+
+
+
+
+.fa-times-circle {
+	color: red;
+}
+
+.fa-exclamation-circle {
+	color: orange;
+}
+
+.fa-question-circle {
+	color: blue;
+}
+
+.fa-check-circle {
+	color: green;
+}
+
+
+
+
+#submitadd {
+	color: #5FB336;
+}
+
+#submitadd i:hover {
+	cursor: pointer;
+}
+
+#canceladd {
+	color: red;
+}
+
+#canceladd i:hover {
+	/*color: red !important;*/
+	cursor: pointer;
+};

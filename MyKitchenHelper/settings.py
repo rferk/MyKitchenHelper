@@ -37,7 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MyKitchenHelper'
+    'MyKitchenHelper',
+    'inventory',
+    'items'
 )
 
 MIDDLEWARE_CLASSES = (

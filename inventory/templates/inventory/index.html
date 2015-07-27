@@ -1,0 +1,53 @@
+{% extends 'MyKitchenHelper/base_main.html' %}
+	
+{% block csslink %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/inventory.css" %}"/>
+{% endblock %}
+
+<!-- TITLE -->
+
+{% block title %}Inventory{% endblock %}
+
+<!-- NAV BUTTONS -->
+
+{% block nav %}
+<ul>
+	<li id="groupby">
+		<label>Group by: </label>
+		<select id="InventoryGroupBy" autocomplete="off">
+			<option value="name" selected="selected">name</option>
+			<option value="category">category</option>
+			<option value="status">status</option>
+		</select>
+	</li>
+	<li id="additem"><i class="fa fa-plus-square"></i></li>
+	<li id="edititems"><i class="fa fa-pencil-square"></i></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div id="adddiv">
+	{% include "inventory/index_adddiv.html" %}
+</div>
+
+<div id="inventorylist">
+	{% include "inventory/index_results.html" %}
+</div>
+{% endblock %}
+
+
+<!-- JS -->
+
+{% block scriptlink %}
+<script>
+	activeNav("inventoryNav");
+	var index_url = "{% url 'inventory:index' %}"
+	var add_url = "{% url 'inventory:add' %}"
+</script>
+<script src="{% static "scripts/inventory.js" %}"></script>
+<script>
+attachGroupDisplayEventHandler()
+updateAddDiv()
+</script>
+{% endblock %}

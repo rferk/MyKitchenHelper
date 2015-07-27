@@ -4,7 +4,6 @@ from django.contrib import admin
 urlpatterns = [
     # Examples:
     url(r'^$', 'MyKitchenHelper.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
+    url(r'^inventory/', include('inventory.urls', namespace="inventory")),
     url(r'^admin/', include(admin.site.urls)),
 ]

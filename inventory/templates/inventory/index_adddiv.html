@@ -1,0 +1,26 @@
+<form method="POST" id="addform">
+	{% csrf_token %}
+	{{ field.errors }}
+	<table>
+		<tr class="labels">
+		{% for field in form %}
+			<td>{{ field.label_tag }}</td>
+		{% endfor %}
+		</tr>
+		<tr class="fields">
+		{% for field in form %}
+			<td>{{ field }}</td>
+		{% endfor %}
+		</tr>
+	</table>
+	<div id="errors"></div> <!-- errors go here -->
+	<ul>
+		<li id="submitadd">
+			<i class="fa fa-check-circle"></i>
+		</li>
+		<li id="canceladd">
+			<i class="fa fa-times-circle"></i>
+		</li>
+	</ul>
+
+</form>

@@ -1,0 +1,12 @@
+{% extends 'base_main.html' %}
+
+	{% block header_text %}{{object|title}}{% endblock %}
+
+	{% block body %}
+
+	<div>
+		<span>Items in stock: </span>
+		<span>{{ object.stock }}</span>
+	</div>
+
+	{% endblock %}
