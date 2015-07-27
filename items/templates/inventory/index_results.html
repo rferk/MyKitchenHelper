@@ -1,7 +1,7 @@
 {% if groupby == "name" %}
 	{% regroup items by first_letter as grouped_list %}
 {% elif groupby == "category" %}
-	{% regroup items|dictsort:"item.category.name" by item.category as grouped_list %}
+	{% regroup items|dictsort:"category.name" by category as grouped_list %}
 {% elif groupby == "status" %}
 	{% regroup items|dictsort:"status.order" by status.status as grouped_list %}
 {% endif %}
