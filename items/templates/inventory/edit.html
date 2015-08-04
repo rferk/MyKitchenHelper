@@ -1,0 +1,17 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}Edit Inventory{% endblock %}
+
+{% block content %}
+
+<form method="post" action="">
+
+{% csrf_token %}
+
+{% for form in formset %}
+blah
+{% endfor %}
+
+</form>
+
+{% endblock %}

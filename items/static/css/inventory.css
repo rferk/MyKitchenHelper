@@ -1,6 +1,5 @@
 #adddiv {
-	display: none;
-	padding: 5px 20px 15px 20px;
+	padding: 10px 20px;
 	margin: 0 5px;
 	border: 1px solid #96CC21;
 	border-top: none;
@@ -8,26 +7,46 @@
 	-webkit-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
 	-moz-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
 	box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.25);
-}
-
-#adddiv table {
-	border-spacing: 25px 0;
-	display: inline-block;
-}
-
-#id_stock, #id_threshold {
-	width: 60px;
-}
-
-#adddiv .fields {
-	/*margin: 0 0 20px 0;*/
-}
-
-#adddiv .labels {
 	font-family: 'Oswald', sans-serif;
-	/*font-variant: small-caps;*/
 	font-size: 14px;
 }
+
+#adddiv input {
+	font-family: "Khula",sans-serif;
+	margin-right: 10px;
+}
+
+#adddiv label {
+	font-family: 'Oswald', sans-serif;
+	font-size: 14px;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+#id_stock {
+	width: 50px;
+}
+
+.errorlist {
+	list-style: symbols(symbolic "*");
+	padding-left: 10px;
+	padding-top: 2px;
+	color: red;
+	font-family: "Khula",sans-serif;
+	font-size: 12px;
+}
+
+.submit {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	font: inherit;
+}
+
+/*.submit i {
+	font-size: 30px;
+	padding: 0;
+}*/
 
 /*#addsubmit {
 	position: absolute;
@@ -41,20 +60,6 @@
 	color: yellow;
 }*/
 
-#adddiv ul {
-	list-style: none;
-	padding-right: 8px;
-	display: inline-block;
-	position: absolute;
-	top: 14px;
-	right: 12px;
-	font-size: 30px;
-}
-
-#adddiv li {
-	float: left;
-	padding-left: 20px;
-}
 
 
 #inventorylist {
@@ -161,7 +166,7 @@
 }
 
 
-
+/*
 
 #submitadd {
 	color: #5FB336;
@@ -176,6 +181,5 @@
 }
 
 #canceladd i:hover {
-	/*color: red !important;*/
 	cursor: pointer;
-};
+};*/

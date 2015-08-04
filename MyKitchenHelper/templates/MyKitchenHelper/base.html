@@ -21,8 +21,12 @@
 
 	<title>My Kitchen Helper</title>
 </head>
+
 <body>
+
 	<header id="apptitle">My Kitchen Helper</header>
+	<i id="mainmenu" class="fa fa-bars"></i>
+
 	<nav id="mainnav">
 		<ul>
 			<li>
@@ -57,8 +61,27 @@
 			</li>
 		</ul>
 	</nav>
+
 	<section id="main">
-		{% block main %}{% endblock %}
+	
+		<header id="contenttitle">
+			{% block title %}{% endblock %}
+		</header>
+	
+		<nav id="contentnav">
+			{% block nav %}{% endblock %}
+		</nav>
+
+		<section id="precontent">
+			{% block precontent %}{% endblock %}
+		</section>
+	
+		<section id="content">
+			{% block content %}{% endblock %}
+		</section>
+	
+		<footer> </footer>
+	
 	</section>
 
 	<script src="{% static "scripts/main.js" %}"></script>

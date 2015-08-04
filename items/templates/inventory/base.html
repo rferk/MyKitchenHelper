@@ -1,0 +1,38 @@
+{% extends 'MyKitchenHelper/base.html' %}
+	
+{% block csslink %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/inventory.css" %}"/>
+{% endblock %}
+
+<!-- TITLE -->
+
+{% block title %}Inventory{% endblock %}
+
+<!-- NAV BUTTONS -->
+
+{% block nav %}
+<ul>
+	{% block navbuttons %}
+	{% endblock %}
+</ul>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- JS -->
+
+{% block scriptlink %}
+<script>
+	activeNav("inventoryNav");
+	var index_url = "{% url 'inventory:index' %}"
+</script>
+<script src="{% static "scripts/inventory.js" %}"></script>
+<script>
+attachGroupDisplayEventHandler()
+updateAddDiv()
+</script>
+{% endblock %}

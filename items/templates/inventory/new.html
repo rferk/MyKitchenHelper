@@ -1,3 +1,4 @@
+
 {% extends 'MyKitchenHelper/base.html' %}
 	
 {% block csslink %}
@@ -10,7 +11,6 @@
 
 <!-- NAV -->
 {% block nav %}
-
 <div id="groupby">
 	<label>Group by: </label>
 	<select id="InventoryGroupBy" autocomplete="off">
@@ -19,20 +19,32 @@
 		<option value="status">status</option>
 	</select>
 </div>
-
-<ul class="contentnavbuttons">
-	<li id="additem">
-		<a href="{% url 'inventory:new' %}">
-			<i class="fa fa-plus-square"></i>
-		</a>
-	</li>
-	<li id="edititems">
-		<a href="{% url 'inventory:edit' %}">
-			<i class="fa fa-pencil-square"></i>
-		</a>
-	</li>
-</ul>
 {% endblock %}
+
+{% block precontent %}
+	<div id="adddiv">
+		<form id="additemform" method="post", action="">
+			{% csrf_token %}
+				{{ form }}
+			<nav>
+				<ul class="contentnavbuttons">
+					<li>
+						<button type="submit" class="submit">
+							<i class="fa fa-check-circle"></i>
+						</button>						
+					</li>
+					<li id="canceladditem">
+						<a href="{% url 'inventory:index' %}">
+							<i class="fa fa-times-circle"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+		</form>
+	</div>
+{% endblock %}
+
 
 {% block content %}
 	<div id="inventorylist">
