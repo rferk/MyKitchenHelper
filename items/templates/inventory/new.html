@@ -7,7 +7,7 @@
 {% endblock %}
 
 <!-- TITLE -->
-{% block title %}Inventory{% endblock %}
+{% block title %}Add New Item{% endblock %}
 
 <!-- NAV -->
 {% block nav %}
@@ -25,7 +25,16 @@
 	<div id="adddiv">
 		<form id="additemform" method="post", action="">
 			{% csrf_token %}
-				{{ form }}
+			{% for field in form %}
+			<table class="fieldtable">
+				<tr><td>{{ field.label }}</td></tr>
+				<tr><td>{{ field }}</td></tr>
+				{% if field.errors %}
+				<tr><td class="errorlist">{{ field.errors }}</td></tr>
+				{% endif %}
+			</table>
+			{% endfor %}
+			<div class="clear"></div>
 			<nav>
 				<ul class="contentnavbuttons">
 					<li>

@@ -5,6 +5,7 @@
 function attachMainMenuEventHandler(){
 	$('#mainmenu').on("click", function(evt){
 		$("#mainnav").toggle();	
+		$("#main").toggle();
 	});	
 };
 attachMainMenuEventHandler();

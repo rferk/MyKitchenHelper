@@ -19,7 +19,7 @@ class ItemCategory(models.Model):
 
 class Item(models.Model):
 	name = LowercaseCharField(max_length=50, unique=True)
-	category = models.ForeignKey(ItemCategory, null=True, blank=True)
+	category = models.ForeignKey(ItemCategory)
 	stock = models.PositiveSmallIntegerField(default="1")
 	tracked = models.BooleanField(default=0)
 	threshold = models.PositiveSmallIntegerField(default="0")

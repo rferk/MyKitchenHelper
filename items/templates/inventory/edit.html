@@ -5,12 +5,80 @@
 {% block content %}
 
 <form method="post" action="">
+	
+	{% csrf_token %}
 
-{% csrf_token %}
+	{{ formset.management_form }}
 
-{% for form in formset %}
-blah
-{% endfor %}
+	<div id="inventoryedit">
+
+		<div class="errors">
+			{% if formset.total_error_count > 0 %}
+				<p>Please Fix Errors!</p>
+				{{ formset.non_form_errors }}
+			{% endif %}
+		</div>
+
+		<table class="group">
+		
+		{% for form in formset %}
+			
+			{% if forloop.first %}
+				<tr class="grouphead">
+				{% for field in form %}
+					<th>
+					{% if field.label != "Id" %}
+						{{field.label}}
+					{% endif %}
+					</th>
+				{% endfor %}
+				</tr>
+			{% endif %}
+
+			<tr>
+			{% for field in form %}
+				{% if field.label == "Stock" %}
+				<td class="mcol">
+				{% elif field.label == "Threshold" %}
+				<td class="scol">
+				{% elif field.label == "Category" %}
+				<td class="lcol">
+				{% elif field.label == "Name" %}
+				<td class="xlcol">
+				{% else %}
+				<td>
+				{% endif %}
+				{{ field }}</td>
+			{% endfor %}
+			</tr>
+
+			{% if form.errors %}
+			<tr class="errorrow">
+				{% for field in form %}
+					<td>{{field.errors}}</td>
+				{% endfor %}
+			<tr>
+			{% endif %}
+
+		{% endfor %}
+		</table>
+
+		<nav>
+			<ul class="contentnavbuttons">
+				<li>
+					<button type="submit" class="submit">
+						<i class="fa fa-check-circle"></i>
+					</button>						
+				</li>
+				<li id="canceladditem">
+					<a href="{% url 'inventory:index' %}">
+						<i class="fa fa-times-circle"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
 
 </form>
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.views.generic import ListView, DetailView, CreateView
+from django.forms.models import modelformset_factory
 from .models import Item
 from .forms import ItemForm
 
@@ -32,4 +33,16 @@ def new(request):
 				  {'items': items, 'groupby': groupby, 'form': form})
 
 def edit(request):
-	return render(request, "inventory/edit.html", {})
+	ItemFormSet = modelformset_factory(
+		Item, 
+		fields=('name', 'category', 'stock', 'tracked', 'threshold'),
+		extra=0
+	)
+	if request.method == "POST":
+		formset = ItemFormSet(request.POST, request.FILES)
+		if formset.is_valid():
+			formset.save()
+			return redirect("inventory:index")
+	else:
+		formset = ItemFormSet()
+	return render(request, "inventory/edit.html", {"formset": formset})
