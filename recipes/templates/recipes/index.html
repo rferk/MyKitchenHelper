@@ -2,29 +2,27 @@
 
 {% block csslink %}
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static "css/inventory.css" %}"/>
+<link rel="stylesheet" type="text/css" href="{% static "css/recipes.css" %}"/>
 {% endblock %}
 
-{% block title %}Inventory{% endblock %}
+{% block title %}Recipe Book{% endblock %}
 
 {% block nav %}
 <div id="groupby">
 	<label>Group by: </label>
 	<select id="GroupBy" autocomplete="off">
 		<option value="name" selected="selected">name</option>
-		<option value="category">category</option>
-		<option value="status">status</option>
 	</select>
 </div>
 
 <ul class="contentnavbuttons">
 	<li id="addobject">
-		<a href="{% url 'inventory:new' %}">
+		<a href="{% url 'recipes:new' %}">
 			<i class="fa fa-plus-square"></i>
 		</a>
 	</li>
 	<li id="editobjects">
-		<a href="{% url 'inventory:edit' %}">
+		<a href="{% url 'recipes:edit' %}">
 			<i class="fa fa-pencil-square"></i>
 		</a>
 	</li>
@@ -32,11 +30,11 @@
 {% endblock %}
 
 {% block objectlist %}
-	{% include "inventory/index_results.html" %}
+	{% include "recipes/index_results.html" %}
 {% endblock %}
 
-{% block activenav %}"inventoryNav"{% endblock %}
+{% block activenav %}"recipesNav"{% endblock %}
 
 {% block indexurl %}
-	"{% url 'inventory:regroup' %}"
+	"{% url 'recipes:regroup' %}"
 {% endblock %}

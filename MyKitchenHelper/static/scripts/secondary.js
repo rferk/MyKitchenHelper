@@ -1,4 +1,4 @@
-$('#InventoryGroupBy').on('change', function(evt){
+$('#GroupBy').on('change', function(evt){
 	evt.preventDefault();
 	var groupby = this.value;
 	console.log(index_url);
@@ -8,11 +8,10 @@ $('#InventoryGroupBy').on('change', function(evt){
 		data: {'groupby': groupby},
 		success: function(data){
 			console.log(data);
-			$("#inventorylist").html(data)
+			$("#objectlist").html(data)
 			attachGroupDisplayEventHandler();
 		}
 	});
-
 });
 
 function attachGroupDisplayEventHandler(){

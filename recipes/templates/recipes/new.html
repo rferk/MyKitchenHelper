@@ -1,14 +1,12 @@
-{% extends 'inventory/index.html' %}
+{% extends 'recipes/index.html' %}
 	
-{% block title %}Add New Item{% endblock %}
+{% block title %}Add New Recipe{% endblock %}
 
 {% block nav %}
 <div id="groupby">
 	<label>Group by: </label>
 	<select id="GroupBy" autocomplete="off">
 		<option value="name" selected="selected">name</option>
-		<option value="category">category</option>
-		<option value="status">status</option>
 	</select>
 </div>
 {% endblock %}
@@ -35,7 +33,7 @@
 						</button>						
 					</li>
 					<li id="canceladd">
-						<a href="{% url 'inventory:index' %}">
+						<a href="{% url 'recipes:index' %}">
 							<i class="fa fa-times-circle"></i>
 						</a>
 					</li>

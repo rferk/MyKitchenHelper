@@ -1,0 +1,31 @@
+{% extends 'MyKitchenHelper/base.html' %}
+	
+{% block csslink %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href={% block appcss %}{% endblock %}/>
+{% endblock %}
+
+<!-- TITLE -->
+{% block title %}{% endblock %}
+
+<!-- NAV -->
+{% block nav %}
+{% endblock %}
+
+{% block content %}
+	<div id="objectlist">
+		{% block objectlist %}{% endblock %}
+	</div>
+{% endblock %}
+
+{% block scriptlink %}
+<script>
+	activeNav({% block activenav %}{% endblock %});
+	var index_url = {% block indexurl %}{% endblock %}
+</script>
+<script src="{% static "scripts/secondary.js" %}"></script>
+<script>
+	attachGroupDisplayEventHandler()
+</script>
+
+{% endblock %}

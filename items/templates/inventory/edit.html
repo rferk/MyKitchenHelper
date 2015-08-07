@@ -10,7 +10,7 @@
 
 	{{ formset.management_form }}
 
-	<div id="inventoryedit">
+	<div id="objectseditlist">
 
 		<div class="errors">
 			{% if formset.total_error_count > 0 %}
@@ -70,7 +70,7 @@
 						<i class="fa fa-check-circle"></i>
 					</button>						
 				</li>
-				<li id="canceladditem">
+				<li id="canceladd">
 					<a href="{% url 'inventory:index' %}">
 						<i class="fa fa-times-circle"></i>
 					</a>

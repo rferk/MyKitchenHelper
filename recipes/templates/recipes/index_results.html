@@ -1,0 +1,30 @@
+{% if groupby == "name" %}
+	{% regroup recipes by first_letter as grouped_list %}
+{% endif %}
+
+{% for group in grouped_list %}
+<table class="group">
+	<colgroup>
+		<col span="1"></col>
+		<col span="1"></col>
+		<col span="1"></col>
+	</colgroup>
+	<tr class="grouphead">
+		<th>
+			<i class="groupdisplay fa fa-toggle-up"></i>
+			{{ group.grouper|upper }}</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	{% for item in group.list %}
+	<tr class="datarow rowshow">
+		<td>{{ item }}</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endfor %}
