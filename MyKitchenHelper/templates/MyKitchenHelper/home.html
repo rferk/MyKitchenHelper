@@ -1,9 +1,15 @@
 {% extends 'MyKitchenHelper/base.html' %}
 
-{% block title %}Welcome!{% endblock %}
+{% block title %}
+{% if user.is_authenticated %}
+Welcome, {{ user.username }}!
+{% else %}
+Log In
+{% endif %}
+{% endblock %}
 
 {% block content %}
-blah
+<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>
 {% endblock %}
 
 {% block scriptlink %}

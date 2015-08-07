@@ -98,16 +98,10 @@ html, body, header, footer, nav, section, div, p, h1, h2, h3, h4, ul, li, a, spa
 	color: #5FB336;
 }
 
-/*#content {
-	padding: 0 1.8em;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 2.8em;
-	bottom: 0;
-	overflow-x: auto;
+#content {
+	padding: 1em;
 }
-*/
+
 #groupby {
 	font-family: 'Oswald', sans-serif;
 	font-variant: small-caps;

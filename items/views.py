@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, render_to_response
 from django.views.generic import ListView, DetailView, CreateView
 from django.forms.models import modelformset_factory
 from .models import Item
 from .forms import ItemForm
 
+@login_required
 def index(request):
 	items = Item.objects.all()
 	groupby = "name"
@@ -11,6 +13,7 @@ def index(request):
 				  "inventory/index.html", 
 				  {'items': items, 'groupby': groupby})
 
+@login_required
 def regroup(request):
 	items = Item.objects.all()
 	groupby = request.GET.get("groupby")
@@ -18,6 +21,7 @@ def regroup(request):
 							  {'items': items, 'groupby': groupby})
 
 
+@login_required
 def new(request):
 	items = Item.objects.all()
 	groupby = "name"
@@ -32,6 +36,7 @@ def new(request):
 				  "inventory/new.html", 
 				  {'items': items, 'groupby': groupby, 'form': form})
 
+@login_required
 def edit(request):
 	ItemFormSet = modelformset_factory(
 		Item, 
